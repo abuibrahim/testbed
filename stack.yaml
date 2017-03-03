@@ -1,0 +1,5 @@
+resolver: lts-14.19
+packages:
+- '.'
+extra-deps:
+- libvirt-hs-0.2.1
