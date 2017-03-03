@@ -1,0 +1,7 @@
+flags: {}
+extra-package-dbs: []
+packages:
+- '.'
+extra-deps:
+- libvirt-hs-0.2.1
+resolver: lts-8.2

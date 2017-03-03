@@ -1,0 +1,40 @@
+To use the tool create a network.xml file that wraps libvirt
+definitions with a testbed tag:
+
+<testbed uri="qemu:///system">
+  <domain>
+  ...
+  </domain>
+  ...
+  <pool>
+  ...
+  </pool>
+  ...
+  <volume>
+  ...
+  </volume>
+  ...
+  <network>
+  ...
+  </network>
+</testbed>
+
+Here testbed uri attribute is any URI libvirt supports. If the
+attribute is missing the value is read from the LIBVIRT_DEFAULT_URI
+environment variable.
+
+The topology elements are created in the following order:
+
+  1) pools
+  2) volume that are backingStores for other volumes
+  3) volumes that use backing stores
+  4) networks
+  5) domains
+
+To start the topology run:
+
+$ testbed create network.xml
+
+To destroy:
+
+$ testbed destroy network.xml
