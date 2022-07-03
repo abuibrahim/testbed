@@ -2,4 +2,4 @@ resolver: lts-14.27
 packages:
 - '.'
 extra-deps:
-- libvirt-hs-0.2.1
+- libvirt-hs-0.2.2
