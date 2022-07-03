@@ -97,7 +97,7 @@ createDomains conn doc = do
   domains <- runX $ doc >>> atTag "domain" >>> (getNameText &&& writeString)
   forM_ domains $ \(name,xml) -> do
     putStrLn $ "Creating domain " ++ name
-    createDomainXML conn xml []
+    createDomainXML conn xml [ DomainStartResetNvram ]
 
 destroyTestbed xml = do
   let doc = readDocument [withValidate yes] xml
